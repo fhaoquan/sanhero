@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" renderorder="right-down" width="30" height="30" tilewidth="64" tileheight="32" nextobjectid="3">
+ <tileset firstgid="1" name="iso-test" tilewidth="64" tileheight="115" spacing="2" margin="2" tilecount="14" columns="7">
+  <image source="iso-test.png" width="512" height="256"/>
+ </tileset>
+ <tileset firstgid="15" name="army1_1" tilewidth="64" tileheight="32" tilecount="1" columns="1">
+  <image source="../army1_1.png" width="76" height="40"/>
+ </tileset>
+ <layer name="Grass" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NkYGBgHCBMbzBq76i9o/aO2stEZ3uZkPBwthemB5u9xLiFVHuJqUuGu738A2AvPxZxWtT7uPTQu71BL//iAqP2jto7au/Is3cgMABMaLG7EA4AAA==
+  </data>
+ </layer>
+ <layer name="Trees" width="30" height="30">
+  <properties>
+   <property name="cc_vertexz" value="automatic"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3NoQ0AMAwDwYB0/5XbAUodkjvJktlXAQDktOZIc6q/vZnsa+b6mv9/3i74MMBTEA4AAA==
+  </data>
+ </layer>
+</map>

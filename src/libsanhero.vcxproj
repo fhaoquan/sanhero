@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DEBUG|Win32">
+      <Configuration>DEBUG</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RELEASE|Win32">
+      <Configuration>RELEASE</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C679E5E3-DEFA-2A21-F388-0FCB0D60CCB8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libsanhero</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup>
+    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\.\bin\;$(MSBuildProjectDirectory)\.\bin\</ExecutablePath>
+    <IntDir>$(Configuration)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath Condition="'$(Configuration)|$(Platform)'=='DEBUG|Win32'">..\proj.win32\debug.win32\$(ProjectName).lib</TargetPath>
+    <TargetPath Condition="'$(Configuration)|$(Platform)'=='RELEASE|Win32'">..\proj.win32\release.win32\$(ProjectName).lib</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DEBUG|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..;..\classes;..\cocos2d\cocos;..\cocos2d\cocos\audio\include;..\cocos2d\cocos\editor-support;..\cocos2d\external\glfw3\include\win32;..\cocos2d\external\win32-specific\gles\include\OGLES;..\cocos2d\external\freetype2\include\win32\freetype2;..\cocos2d\external\freetype2\include\win32;..\cocos2d\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <OutputFile>../proj.win32/debug.win32/$(ProjectName).lib</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>libpng.lib;libjpeg.lib;libtiff.lib;glfw3.lib;libchipmunk.lib;libcocos2d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>debug.win32;../cocos2d/external/png/prebuilt/win32;../cocos2d/external/jpeg/prebuilt/win32;../cocos2d/external/tiff/prebuilt/win32;../cocos2d/external/glfw3/prebuilt/win32;../cocos2d/external/chipmunk/prebuilt/win32/release-lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..;..\classes;..\cocos2d\cocos;..\cocos2d\cocos\audio\include;..\cocos2d\cocos\editor-support;..\cocos2d\external\glfw3\include\win32;..\cocos2d\external\win32-specific\gles\include\OGLES;..\cocos2d\external\freetype2\include\win32\freetype2;..\cocos2d\external\freetype2\include\win32;..\cocos2d\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RELEASE|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..;..\classes;..\cocos2d\cocos;..\cocos2d\cocos\audio\include;..\cocos2d\cocos\editor-support;..\cocos2d\external\glfw3\include\win32;..\cocos2d\external\win32-specific\gles\include\OGLES;..\cocos2d\external\freetype2\include\win32\freetype2;..\cocos2d\external\freetype2\include\win32;..\cocos2d\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <OutputFile>../proj.win32/release.win32/$(ProjectName).lib</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>libpng.lib;libjpeg.lib;libtiff.lib;glfw3.lib;libchipmunk.lib;libcocos2d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>debug.win32;../cocos2d/external/png/prebuilt/win32;../cocos2d/external/jpeg/prebuilt/win32;../cocos2d/external/tiff/prebuilt/win32;../cocos2d/external/glfw3/prebuilt/win32;../cocos2d/external/chipmunk/prebuilt/win32/release-lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..;..\classes;..\cocos2d\cocos;..\cocos2d\cocos\audio\include;..\cocos2d\cocos\editor-support;..\cocos2d\external\glfw3\include\win32;..\cocos2d\external\win32-specific\gles\include\OGLES;..\cocos2d\external\freetype2\include\win32\freetype2;..\cocos2d\external\freetype2\include\win32;..\cocos2d\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="play.bat"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="c_sprite_action.h"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="c_sprite_action.cc"/>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="libsanhero.gyp">
+      <FileType>Document</FileType>
+      <Command>call call &quot;$(ProjectDir).\setup_env.bat&quot; &amp;&amp; set CYGWIN=nontsec&amp;&amp; set OUTDIR=$(OutDir)&amp;&amp; bash -c &quot;\&quot;copy_resource.bat\&quot; \&quot;`cygpath -m \\\&quot;${OUTDIR}\\\&quot;`\&quot;&quot;&#xD;&#xA;if %errorlevel% neq 0 exit /b %errorlevel%</Command>
+      <Message>xcopy_resource</Message>
+      <Outputs></Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
+</Project>

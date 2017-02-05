@@ -1,0 +1,41 @@
+
+1. 0ad的单元测试
+
+	1) 打开test_performance_short_DISABLED=》test_performance_short
+	2）短路径计算中包含了建筑单位的避让
+	3）添加位置输出
+	srand(unsigned int(time(0)));
+		std::ofstream outfile("pather_struct.csv");
+		for (size_t i = 0; i < 100; ++i)
+		{
+			fixed x = fixed::FromFloat(1.5f*range.ToFloat() * rand()/(float)RAND_MAX);
+			fixed z = fixed::FromFloat(1.5f*range.ToFloat() * rand()/(float)RAND_MAX);
+			//printf("# %f %f\n", x.ToFloat(), z.ToFloat());
+			outfile << x.ToFloat() << " " << z.ToFloat() << "\n";
+			cmpObstructionMan->AddUnitShape(INVALID_ENTITY, x, z, fixed::FromInt(2), 0, INVALID_ENTITY);
+		}
+		outfile.close();
+
+		NullObstructionFilter filter;
+		PathGoal goal = { PathGoal::POINT, range, range };
+		WaypointPath path;
+		cmpPathfinder->UpdateGrid();
+		entity_pos_t start_pos = entity_pos_t::FromInt(0);
+		start_pos = range / 4;
+		cmpPathfinder->ComputeShortPath(filter, start_pos, start_pos, fixed::FromInt(2), range, goal, 0, path);
+		std::ofstream outfile2("pather_path.csv");
+		outfile2 << range.ToFloat() << " " << range.ToFloat() << "\n";
+		for (size_t i = 0; i < path.m_Waypoints.size(); ++i)
+			//printf("%f %f\n", path.m_Waypoints[i].x.ToFloat(), path.m_Waypoints[i].z.ToFloat());
+			//printf("# %d: %f %f\n", (int)i, path.m_Waypoints[i].x.ToFloat(), path.m_Waypoints[i].z.ToFloat());
+			outfile2 << path.m_Waypoints[i].x.ToFloat() << " " << path.m_Waypoints[i].z.ToFloat() << "\n";
+		outfile2 << start_pos.ToFloat() << " " << start_pos.ToFloat() << "\n";
+		outfile2.close();
+	建筑单元200个的话太多， 100个正好
+	path  vector是倒序的，且没有起始点和目标点
+	4）编译好release后在system下执行test
+	5）再调用test.py看效果
+	6) 效果见figure_1.png
+	7） 问题， 建筑单元统一使用了间隙fixed::FromInt(2)， 而不是使用具体的矩形， 对于大的建筑物，估计是使用多个固定单元来合并
+	8)看测试应该不是最优解而是次优解
+	9)  长路径计算基本是两点连线

@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsanhero", "libsanhero.vcxproj", "{C679E5E3-DEFA-2A21-F388-0FCB0D60CCB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DEBUG|Win32 = DEBUG|Win32
+		RELEASE|Win32 = RELEASE|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C679E5E3-DEFA-2A21-F388-0FCB0D60CCB8}.DEBUG|Win32.ActiveCfg = DEBUG|Win32
+		{C679E5E3-DEFA-2A21-F388-0FCB0D60CCB8}.DEBUG|Win32.Build.0 = DEBUG|Win32
+		{C679E5E3-DEFA-2A21-F388-0FCB0D60CCB8}.RELEASE|Win32.ActiveCfg = RELEASE|Win32
+		{C679E5E3-DEFA-2A21-F388-0FCB0D60CCB8}.RELEASE|Win32.Build.0 = RELEASE|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

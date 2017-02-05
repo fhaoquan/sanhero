@@ -1,0 +1,13 @@
+安装中碰到的问题
+
+1. 使用远程桌面， 运行时会碰到glwf错误， 真机无问题
+
+2. 使用uwp方式， 会碰到部署错误， 暂时使用win32方式
+
+
+一些github上的代码， 暂时还用不上, 因此未下载, 大部分是ios及lua等实现的项目
+1. https://github.com/bluesky466/Cocos2dxUsefulClasses	更新字幕类和A*寻路类
+
+一些容易出错的地方
+
+1. 关闭动画Action， 使用StopAllActions时，必须针对具体的Sprite，而不能在Layer中调， 否则无效

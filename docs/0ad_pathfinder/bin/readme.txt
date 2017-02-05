@@ -1,0 +1,9 @@
+从0ad的release目录拷贝如下文件
+glooxwrapper.dll
+lib0ad.dll
+libpng16.dll
+libxml2.dll
+mozjs38-ps-release.dll
+msvcp120.dll
+SDL2.dll
+至执行目录

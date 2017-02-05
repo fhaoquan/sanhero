@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0343F2A9-B55E-DA4A-B319-209D2809A48B}</ProjectGuid>
+    <RootNamespace>test</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\binaries\system\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\test_Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">test</TargetName>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\binaries\system\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\test_Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">test_dbg</TargetName>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/FI"js/RequiredDefines.h" %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\source\pch\test;..\..\..\source;..\..\..\libraries\win32\opengl\include;..\..\..\libraries\win32\sdl2\include\SDL;..\..\..\libraries\win32\libpng\include;..\..\..\libraries\win32\zlib\include;..\..\..\libraries\source\spidermonkey\include-win32-release;..\..\..\libraries\win32\libxml2\include;..\..\..\libraries\win32\boost\include;..\..\..\libraries\source\cxxtest-4.4;..\..\..\libraries\win32\enet\include;..\..\..\libraries\win32\libcurl\include;..\..\..\source\third_party\tinygettext\include;..\..\..\libraries\win32\icu\include;..\..\..\libraries\win32\iconv\include;..\..\..\libraries\source\valgrind\include;..\..\..\libraries\win32\openal\include;..\..\..\libraries\win32\vorbis\include;..\..\..\libraries\source\nvtt\include;..\..\..\libraries\win32\gloox\include;..\..\..\libraries\win32\miniupnpc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;CONFIG_FINAL=1;LIB_STATIC_LINK;USING_PCH;HAVE_ICONV_CONST;ICONV_CONST=const;LIBICONV_STATIC;NVTT_SHARED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precompiled.h</PrecompiledHeaderFile>
+      <WarningLevel>Level4</WarningLevel>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;CONFIG_FINAL=1;LIB_STATIC_LINK;USING_PCH;HAVE_ICONV_CONST;ICONV_CONST=const;LIBICONV_STATIC;NVTT_SHARED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\source\pch\test;..\..\..\source;..\..\..\libraries\win32\opengl\include;..\..\..\libraries\win32\sdl2\include\SDL;..\..\..\libraries\win32\libpng\include;..\..\..\libraries\win32\zlib\include;..\..\..\libraries\source\spidermonkey\include-win32-release;..\..\..\libraries\win32\libxml2\include;..\..\..\libraries\win32\boost\include;..\..\..\libraries\source\cxxtest-4.4;..\..\..\libraries\win32\enet\include;..\..\..\libraries\win32\libcurl\include;..\..\..\source\third_party\tinygettext\include;..\..\..\libraries\win32\icu\include;..\..\..\libraries\win32\iconv\include;..\..\..\libraries\source\valgrind\include;..\..\..\libraries\win32\openal\include;..\..\..\libraries\win32\vorbis\include;..\..\..\libraries\source\nvtt\include;..\..\..\libraries\win32\gloox\include;..\..\..\libraries\win32\miniupnpc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\..\binaries\system\network.lib;..\..\..\binaries\system\tinygettext.lib;..\..\..\binaries\system\lobby.lib;..\..\..\binaries\system\simulation2.lib;..\..\..\binaries\system\scriptinterface.lib;..\..\..\binaries\system\engine.lib;..\..\..\binaries\system\graphics.lib;..\..\..\binaries\system\atlas.lib;..\..\..\binaries\system\gui.lib;..\..\..\binaries\system\lowlevel.lib;..\..\..\binaries\system\mongoose.lib;glooxwrapper.lib;..\..\..\binaries\system\mocks_test.lib;opengl32.lib;gdi32.lib;libpng16.lib;zlib1.lib;mozjs38-ps-release.lib;libxml2.lib;comsuppw.lib;enet.lib;libcurl.lib;icuuc.lib;icuin.lib;libiconv.lib;openal32.lib;vorbisfile.lib;nvtt.lib;gloox-1.0.lib;miniupnpc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)lib0ad.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\binaries\system;..\..\..\libraries\win32\opengl\lib;..\..\..\libraries\win32\sdl2\lib;..\..\..\libraries\win32\libpng\lib;..\..\..\libraries\win32\zlib\lib;..\..\..\libraries\source\spidermonkey\lib;..\..\..\libraries\win32\libxml2\lib;..\..\..\libraries\win32\boost\lib;..\..\..\libraries\win32\enet\lib;..\..\..\libraries\win32\libcurl\lib;..\..\..\libraries\win32\icu\lib;..\..\..\libraries\win32\iconv\lib;..\..\..\libraries\win32\openal\lib;..\..\..\libraries\win32\vorbis\lib;..\..\..\libraries\source\nvtt\lib;..\..\..\libraries\win32\gloox\lib;..\..\..\libraries\win32\miniupnpc\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ProgramDataBaseFileName>$(OutDir)test.pdb</ProgramDataBaseFileName>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/DELAYLOAD:libpng16.dll /DELAYLOAD:enet.dll /DELAYLOAD:libcurl.dll /DELAYLOAD:vorbisfile.dll /DELAYLOAD:nvtt.dll /DELAYLOAD:miniupnpc.dll /INCLUDE:_wstartup_InitAndRegisterShutdown /SUBSYSTEM:CONSOLE "/manifestdependency:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='X86' publicKeyToken='6595b64144ccf1df'" %(AdditionalOptions)</AdditionalOptions>
+      <NoEntryPoint>true</NoEntryPoint>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+      <Command>..\..\bin\cxxtestgen.exe --root --have-std --runner=ErrorPrinter --include=precompiled.h --include=lib/external_libraries/libsdl.h &gt; ..\..\..\source\test_root.cpp</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/FI"js/RequiredDefines.h" %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\source\pch\test;..\..\..\source;..\..\..\libraries\win32\opengl\include;..\..\..\libraries\win32\sdl2\include\SDL;..\..\..\libraries\win32\libpng\include;..\..\..\libraries\win32\zlib\include;..\..\..\libraries\source\spidermonkey\include-win32-debug;..\..\..\libraries\win32\libxml2\include;..\..\..\libraries\win32\boost\include;..\..\..\libraries\source\cxxtest-4.4;..\..\..\libraries\win32\enet\include;..\..\..\libraries\win32\libcurl\include;..\..\..\source\third_party\tinygettext\include;..\..\..\libraries\win32\icu\include;..\..\..\libraries\win32\iconv\include;..\..\..\libraries\source\valgrind\include;..\..\..\libraries\win32\openal\include;..\..\..\libraries\win32\vorbis\include;..\..\..\libraries\source\nvtt\include;..\..\..\libraries\win32\gloox\include;..\..\..\libraries\win32\miniupnpc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;LIB_STATIC_LINK;USING_PCH;HAVE_ICONV_CONST;ICONV_CONST=const;LIBICONV_STATIC;NVTT_SHARED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precompiled.h</PrecompiledHeaderFile>
+      <WarningLevel>Level4</WarningLevel>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>DEBUG;LIB_STATIC_LINK;USING_PCH;HAVE_ICONV_CONST;ICONV_CONST=const;LIBICONV_STATIC;NVTT_SHARED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\source\pch\test;..\..\..\source;..\..\..\libraries\win32\opengl\include;..\..\..\libraries\win32\sdl2\include\SDL;..\..\..\libraries\win32\libpng\include;..\..\..\libraries\win32\zlib\include;..\..\..\libraries\source\spidermonkey\include-win32-debug;..\..\..\libraries\win32\libxml2\include;..\..\..\libraries\win32\boost\include;..\..\..\libraries\source\cxxtest-4.4;..\..\..\libraries\win32\enet\include;..\..\..\libraries\win32\libcurl\include;..\..\..\source\third_party\tinygettext\include;..\..\..\libraries\win32\icu\include;..\..\..\libraries\win32\iconv\include;..\..\..\libraries\source\valgrind\include;..\..\..\libraries\win32\openal\include;..\..\..\libraries\win32\vorbis\include;..\..\..\libraries\source\nvtt\include;..\..\..\libraries\win32\gloox\include;..\..\..\libraries\win32\miniupnpc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\..\binaries\system\network_dbg.lib;..\..\..\binaries\system\tinygettext_dbg.lib;..\..\..\binaries\system\lobby_dbg.lib;..\..\..\binaries\system\simulation2_dbg.lib;..\..\..\binaries\system\scriptinterface_dbg.lib;..\..\..\binaries\system\engine_dbg.lib;..\..\..\binaries\system\graphics_dbg.lib;..\..\..\binaries\system\atlas_dbg.lib;..\..\..\binaries\system\gui_dbg.lib;..\..\..\binaries\system\lowlevel_dbg.lib;..\..\..\binaries\system\mongoose_dbg.lib;glooxwrapper_dbg.lib;..\..\..\binaries\system\mocks_test_dbg.lib;opengl32.lib;gdi32.lib;libpng16d.lib;zlib1d.lib;mozjs38-ps-debug.lib;libxml2.lib;comsuppwd.lib;enetd.lib;libcurld.lib;icuuc.lib;icuin.lib;libiconv.lib;openal32.lib;vorbisfile_d.lib;nvtt.lib;gloox-1.0d.lib;miniupnpcd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)lib0ad.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\binaries\system;..\..\..\libraries\win32\opengl\lib;..\..\..\libraries\win32\sdl2\lib;..\..\..\libraries\win32\libpng\lib;..\..\..\libraries\win32\zlib\lib;..\..\..\libraries\source\spidermonkey\lib;..\..\..\libraries\win32\libxml2\lib;..\..\..\libraries\win32\boost\lib;..\..\..\libraries\win32\enet\lib;..\..\..\libraries\win32\libcurl\lib;..\..\..\libraries\win32\icu\lib;..\..\..\libraries\win32\iconv\lib;..\..\..\libraries\win32\openal\lib;..\..\..\libraries\win32\vorbis\lib;..\..\..\libraries\source\nvtt\lib;..\..\..\libraries\win32\gloox\lib;..\..\..\libraries\win32\miniupnpc\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDataBaseFileName>$(OutDir)test_dbg.pdb</ProgramDataBaseFileName>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/DELAYLOAD:libpng16d.dll /DELAYLOAD:enetd.dll /DELAYLOAD:libcurld.dll /DELAYLOAD:vorbisfile_d.dll /DELAYLOAD:nvtt.dll /DELAYLOAD:miniupnpcd.dll /INCLUDE:_wstartup_InitAndRegisterShutdown /SUBSYSTEM:CONSOLE "/manifestdependency:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='X86' publicKeyToken='6595b64144ccf1df'" %(AdditionalOptions)</AdditionalOptions>
+      <NoEntryPoint>true</NoEntryPoint>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+      <Command>..\..\bin\cxxtestgen.exe --root --have-std --runner=ErrorPrinter --include=precompiled.h --include=lib/external_libraries/libsdl.h &gt; ..\..\..\source\test_root.cpp</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\source\ps\tests\stub_impl_hack.h">
+      <Message>Generating stub_impl_hack.cpp</Message>
+      <Command>..\..\bin\cxxtestgen.exe --part --have-std --include=precompiled.h --include=lib/external_libraries/libsdl.h -o "..\..\..\source\ps\tests\stub_impl_hack.cpp" "..\..\..\source\ps\tests\stub_impl_hack.h"</Command>
+      <Outputs>..\..\..\source\ps\tests\stub_impl_hack.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\source\ps\tests\test_test.h">
+      <Message>Generating test_test.cpp</Message>
+      <Command>..\..\bin\cxxtestgen.exe --part --have-std --include=precompiled.h --include=lib/external_libraries/libsdl.h -o "..\..\..\source\ps\tests\test_test.cpp" "..\..\..\source\ps\tests\test_test.h"</Command>
+      <Outputs>..\..\..\source\ps\tests\test_test.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\pch\test\precompiled.h" />
+    <ClInclude Include="..\..\..\source\simulation2\helpers\0ad_path_finder.h" />
+    <ClInclude Include="..\..\..\source\simulation2\helpers\myPathFinder.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\simulation2\helpers\0ad_path_finder.cpp" />
+    <ClCompile Include="..\..\..\source\simulation2\helpers\myPathFinder.cpp" />
+    <ClCompile Include="..\..\..\source\test_root.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\ps\tests\stub_impl_hack.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\ps\tests\test_test.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\pch\test\precompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\test_setup.cpp">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\source\lib\sysdep\os\win\error_dialog.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
